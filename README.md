@@ -22,5 +22,3 @@ OR
 
 $config = config('app.name');
 $config = config('app.name', 'New App Name');
-
-```php
