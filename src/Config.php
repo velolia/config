@@ -121,8 +121,9 @@ class Config
             return;
         }
 
-        $dir = __DIR__;
-        while ($dir !== dirname($dir)) {
+        $dir = getcwd();
+        
+        while ($dir && is_dir($dir) && $dir !== dirname($dir)) {
             $configPath = $dir . DIRECTORY_SEPARATOR . self::CONFIG_DIR_NAME;
             if (is_dir($configPath)) {
                 self::setConfigPath($configPath);
